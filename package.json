@@ -1,0 +1,19 @@
+{
+  "name": "mean-course-example",
+  "version": "1.0.0",
+  "description": "Example of an app using MEAN ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lcabello/meanJS.git"
+  },
+  "author": "Lcabello",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lcabello/meanJS/issues"
+  },
+  "homepage": "https://github.com/lcabello/meanJS#readme"
+}
