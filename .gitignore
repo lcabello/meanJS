@@ -36,6 +36,17 @@ build/Release
 node_modules/
 jspm_packages/
 
+# node
+package-lock.json
+npm-debug.log
+
+# OS files
+.DS_Store
+.DS_Store?
+.Trashes
+ehthumbs.db
+Thumbs.db
+
 # TypeScript v1 declaration files
 typings/
 
