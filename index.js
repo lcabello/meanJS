@@ -1,8 +1,7 @@
-'use strict';
+const mongoose = require('mongoose');
+const app = require('./app');
 
-var mongoose = require('mongoose');
-var app = require('./app');
-var port = process.env.PORT || 3977;
+const port = process.env.PORT || 3977;
 
 mongoose.connect('mongodb://localhost:27017/mean_db', (err, res) => {
   if (err) throw err;
