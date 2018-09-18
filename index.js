@@ -9,6 +9,6 @@ mongoose.connect('mongodb://localhost:27017/mean_db', (err, res) => {
   console.log('Database connection established');
 
   app.listen(port, () => {
-    console.log('Server running');
+    console.log(`Server running localhost:${port}`);
   });
 });

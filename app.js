@@ -1,24 +1,23 @@
-'use strict';
+const express = require('express');
+const bodyParser = require('body-parser');
+const routes = require('./routes/user');
 
-var express = require('express');
-var bodyParser = require('body-parser');
+const app = express();
 
-var app = express();
+// Routes
+app.use('/api', routes);
 
-//Routes
-
-//Body parser configuration
-app.use(bodyParser.urlencoded({extended: false}));
+// Body parser configuration
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-//Head configuration
+// Head configuration
 
-
-//Defaults Routes
-app.get('/', function (req, res) {
+// Defaults Routes
+app.get('/connection-test', (req, res) => {
   res.status(200).send({
     Message: 'First connection'
-  })
+  });
 });
 
 module.exports = app;
