@@ -4,9 +4,6 @@ const routes = require('./routes/user');
 
 const app = express();
 
-// Routes
-app.use('/api', routes);
-
 // Body parser configuration
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -19,5 +16,8 @@ app.get('/connection-test', (req, res) => {
     Message: 'First connection'
   });
 });
+
+// Routes
+app.use('/api', routes);
 
 module.exports = app;
