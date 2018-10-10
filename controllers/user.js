@@ -87,8 +87,30 @@ function loginUser (req, res) {
   });
 }
 
+function updateUser (req, res) {
+  const userId = req.params.id;
+  const params = req.body;
+
+  User.findByIdAndUpdate(userId, params, (err, userUpdated) => {
+    if (err) {
+      res.status(500).send({
+        message: 'Error'
+      });
+    } else if (!userUpdated) {
+      res.status(500).send({
+        message: 'Not updated'
+      });
+    }
+
+    res.status(200).send({
+      message: 'User updated'
+    });
+  });
+}
+
 module.exports = {
   pruebas,
   saveUser,
-  loginUser
+  loginUser,
+  updateUser
 };
