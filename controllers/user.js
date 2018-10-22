@@ -108,9 +108,35 @@ function updateUser (req, res) {
   });
 }
 
+function uploadImage (req, res) {
+  const userId = req.params.id;
+  let fileName = `No upload`;
+
+  if (req.files) {
+    /* We´ll insert control about extension */
+    fileName = req.files.image.path.split('/')[2];
+    User.findByIdAndUpdate(userId, { image: fileName }, (errUpload, userUpdated) => {
+      if (errUpload) {
+        res.status(404).send({
+          message: 'Problem uploading'
+        });
+      } else {
+        res.status(200).send({
+          message: 'User updated'
+        });
+      }
+    });
+  } else {
+    res.status(500).send({
+      message: 'No image'
+    });
+  }
+}
+
 module.exports = {
   pruebas,
   saveUser,
   loginUser,
-  updateUser
+  updateUser,
+  uploadImage
 };
