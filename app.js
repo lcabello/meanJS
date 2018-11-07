@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const routes = require('./routes/user');
+const user_routes = require('./routes/user');
+const artist_routes = require('./routes/artist');
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.get('/connection-test', (req, res) => {
 });
 
 // Routes
-app.use('/api', routes);
+app.use('/api', user_routes);
+app.use('/api', artist_routes);
 
 module.exports = app;
