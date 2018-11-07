@@ -1,4 +1,4 @@
-const moongose = require('moongose');
+const moongose = require('mongoose');
 
 let ArtistSchema = moongose.Schema({
   name: String,

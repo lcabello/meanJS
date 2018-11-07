@@ -8,4 +8,4 @@ let AlbumSchema = moongose.Schema({
   artist: { type: moongose.Schema.ObjectId, ref: 'Artist' }
 });
 
-module.exports = moongose.module('Album', AlbumSchema);
+module.exports = moongose.model('Album', AlbumSchema);
